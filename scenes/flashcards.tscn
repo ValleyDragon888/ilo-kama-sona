@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7molslfff2wm"]
+[gd_scene load_steps=8 format=3 uid="uid://b7molslfff2wm"]
 
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_2lsmm"]
+[ext_resource type="StyleBox" uid="uid://d4bwhuycor5jc" path="res://scenes/ike.tres" id="2_8s8vl"]
+[ext_resource type="StyleBox" uid="uid://6m8p0vuacjdo" path="res://scenes/pona.tres" id="3_u7gry"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t1uq4"]
 font_size = 28
@@ -10,11 +12,11 @@ outline_size = 2
 font = ExtResource("1_2lsmm")
 font_size = 81
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vhmj"]
-bg_color = Color(0.778083, 0.258391, 0.218449, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqy6u"]
+bg_color = Color(0.600231, 0.180177, 0.150072, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43ndo"]
-bg_color = Color(0.315885, 0.490817, 0.111392, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnhn4"]
+bg_color = Color(0.221462, 0.351019, 0.0710477, 1)
 
 [node name="Flashcards" type="Node2D"]
 
@@ -62,7 +64,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2lsmm")
 theme_override_font_sizes/font_size = 73
-theme_override_styles/normal = SubResource("StyleBoxFlat_2vhmj")
+theme_override_styles/hover = ExtResource("2_8s8vl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dqy6u")
+theme_override_styles/normal = ExtResource("2_8s8vl")
 text = "ike"
 
 [node name="pona" type="Button" parent="CanvasLayer/VBoxContainer/BottomBarButtons"]
@@ -70,5 +74,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2lsmm")
 theme_override_font_sizes/font_size = 73
-theme_override_styles/normal = SubResource("StyleBoxFlat_43ndo")
+theme_override_styles/hover = ExtResource("3_u7gry")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pnhn4")
+theme_override_styles/normal = ExtResource("3_u7gry")
 text = "pona"
