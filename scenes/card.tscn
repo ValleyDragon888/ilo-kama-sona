@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdfsge52fwu1f"]
+
+[ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_y1pi3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_psb0o"]
+font_size = 28
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_n3n70"]
+font = ExtResource("1_y1pi3")
+font_size = 81
+
+[node name="Card" type="Node2D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 270.0
+offset_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SideIndicator" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Front"
+label_settings = SubResource("LabelSettings_psb0o")
+horizontal_alignment = 1
+
+[node name="SitelenPona" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "akesi"
+label_settings = SubResource("LabelSettings_n3n70")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "akesi"
+horizontal_alignment = 1

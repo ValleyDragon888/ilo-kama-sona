@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7molslfff2wm"]
+
+[ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_2lsmm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t1uq4"]
+font_size = 28
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_8r7km"]
+font = ExtResource("1_2lsmm")
+font_size = 81
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vhmj"]
+bg_color = Color(0.778083, 0.258391, 0.218449, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43ndo"]
+bg_color = Color(0.315885, 0.490817, 0.111392, 1)
+
+[node name="Flashcards" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(270, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Card" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.6
+
+[node name="SideIndicator" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
+layout_mode = 2
+text = "Front"
+label_settings = SubResource("LabelSettings_t1uq4")
+horizontal_alignment = 1
+
+[node name="SitelenPona" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
+layout_mode = 2
+text = "akesi"
+label_settings = SubResource("LabelSettings_8r7km")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
+layout_mode = 2
+text = "akesi"
+horizontal_alignment = 1
+
+[node name="BottomBarButtons" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ike" type="Button" parent="CanvasLayer/VBoxContainer/BottomBarButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2lsmm")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxFlat_2vhmj")
+text = "ike"
+
+[node name="pona" type="Button" parent="CanvasLayer/VBoxContainer/BottomBarButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2lsmm")
+theme_override_font_sizes/font_size = 73
+theme_override_styles/normal = SubResource("StyleBoxFlat_43ndo")
+text = "pona"
