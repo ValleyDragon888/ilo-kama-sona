@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 enum FlashcardType { LATIN, SITELEN, BOTH }
 @onready var latincard = $VBoxContainer/LatinCard
@@ -31,3 +31,6 @@ func set_flashcard_type(type: FlashcardType):
 		FlashcardType.LATIN: latincard.show()
 		FlashcardType.SITELEN: sitelenponacard.show()
 		FlashcardType.BOTH: sitelenlatincard.show()
+
+func set_display_type(t: FlashcardType):
+	type = t

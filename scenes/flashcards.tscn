@@ -1,18 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7molslfff2wm"]
+[gd_scene load_steps=10 format=3 uid="uid://b7molslfff2wm"]
 
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_2lsmm"]
 [ext_resource type="Script" path="res://scripts/flashcards.gd" id="1_8mngu"]
 [ext_resource type="StyleBox" uid="uid://d4bwhuycor5jc" path="res://scenes/ike.tres" id="2_8s8vl"]
+[ext_resource type="PackedScene" uid="uid://bdfsge52fwu1f" path="res://scenes/card.tscn" id="2_skevj"]
 [ext_resource type="StyleBox" uid="uid://clk4ah5g37f4h" path="res://scenes/flip.tres" id="3_6ftae"]
 [ext_resource type="StyleBox" uid="uid://6m8p0vuacjdo" path="res://scenes/pona.tres" id="3_u7gry"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_t1uq4"]
-font_size = 28
-outline_size = 2
-
-[sub_resource type="LabelSettings" id="LabelSettings_8r7km"]
-font = ExtResource("1_2lsmm")
-font_size = 81
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eott1"]
 bg_color = Color(0.601507, 0.406625, 0.0545112, 1)
@@ -28,37 +21,18 @@ script = ExtResource("1_8mngu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Card" parent="CanvasLayer" instance=ExtResource("2_skevj")]
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-custom_minimum_size = Vector2(270, 600)
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.735
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -0.200012
+offset_bottom = -1.20001
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
-
-[node name="Card" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.75
-
-[node name="SideIndicator" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
-layout_mode = 2
-text = "Front"
-label_settings = SubResource("LabelSettings_t1uq4")
-horizontal_alignment = 1
-
-[node name="SitelenPona" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
-layout_mode = 2
-text = "akesi"
-label_settings = SubResource("LabelSettings_8r7km")
-horizontal_alignment = 1
-
-[node name="Text" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
-layout_mode = 2
-text = "akesi"
-horizontal_alignment = 1
+size_flags_vertical = 0
 
 [node name="FlipCard" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -99,3 +73,6 @@ theme_override_styles/hover = ExtResource("3_u7gry")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pnhn4")
 theme_override_styles/normal = ExtResource("3_u7gry")
 text = "pona"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/ike" to="." method="_on_ike_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/pona" to="." method="_on_pona_pressed"]
