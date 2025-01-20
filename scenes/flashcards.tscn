@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7molslfff2wm"]
+[gd_scene load_steps=11 format=3 uid="uid://b7molslfff2wm"]
 
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_2lsmm"]
+[ext_resource type="Script" path="res://scripts/flashcards.gd" id="1_8mngu"]
 [ext_resource type="StyleBox" uid="uid://d4bwhuycor5jc" path="res://scenes/ike.tres" id="2_8s8vl"]
+[ext_resource type="StyleBox" uid="uid://clk4ah5g37f4h" path="res://scenes/flip.tres" id="3_6ftae"]
 [ext_resource type="StyleBox" uid="uid://6m8p0vuacjdo" path="res://scenes/pona.tres" id="3_u7gry"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t1uq4"]
@@ -12,6 +14,9 @@ outline_size = 2
 font = ExtResource("1_2lsmm")
 font_size = 81
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eott1"]
+bg_color = Color(0.601507, 0.406625, 0.0545112, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqy6u"]
 bg_color = Color(0.600231, 0.180177, 0.150072, 1)
 
@@ -19,6 +24,7 @@ bg_color = Color(0.600231, 0.180177, 0.150072, 1)
 bg_color = Color(0.221462, 0.351019, 0.0710477, 1)
 
 [node name="Flashcards" type="Node2D"]
+script = ExtResource("1_8mngu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,7 +41,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 4.6
+size_flags_stretch_ratio = 5.75
 
 [node name="SideIndicator" type="Label" parent="CanvasLayer/VBoxContainer/Card"]
 layout_mode = 2
@@ -53,6 +59,21 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "akesi"
 horizontal_alignment = 1
+
+[node name="FlipCard" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/FlipCard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.72
+theme_override_fonts/font = ExtResource("1_2lsmm")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/hover = ExtResource("3_6ftae")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eott1")
+theme_override_styles/normal = ExtResource("3_6ftae")
+text = "tan"
 
 [node name="BottomBarButtons" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
