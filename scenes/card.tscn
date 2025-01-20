@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdfsge52fwu1f"]
+[gd_scene load_steps=6 format=3 uid="uid://bdfsge52fwu1f"]
 
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_wxos3"]
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_y1pi3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_psb0o"]
@@ -14,6 +15,7 @@ font_size = 81
 font_size = 30
 
 [node name="Card" type="Node2D"]
+script = ExtResource("1_wxos3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 270.0
@@ -28,7 +30,6 @@ label_settings = SubResource("LabelSettings_psb0o")
 horizontal_alignment = 1
 
 [node name="SitelenPonaCard" type="VBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="SitelenPona" type="Label" parent="VBoxContainer/SitelenPonaCard"]
