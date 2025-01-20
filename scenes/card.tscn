@@ -34,6 +34,7 @@ label_settings = SubResource("LabelSettings_psb0o")
 horizontal_alignment = 1
 
 [node name="SitelenPonaCard" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="SitelenPona" type="Label" parent="VBoxContainer/SitelenPonaCard"]

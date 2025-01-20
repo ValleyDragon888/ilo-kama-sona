@@ -25,12 +25,12 @@ func refresh_display():
 			$VBoxContainer/SitelenLatinCard/Text.text = word
 			$VBoxContainer/SitelenLatinCard/SitelenPona.text = word
 
-func set_flashcard_type(type: FlashcardType):
-	latincard.hide(); sitelenponacard.hide(); sitelenlatincard.hide
-	match type:
+func set_flashcard_type(t: FlashcardType):
+	type = t
+	latincard.hide(); sitelenponacard.hide(); sitelenlatincard.hide()
+	match t:
 		FlashcardType.LATIN: latincard.show()
 		FlashcardType.SITELEN: sitelenponacard.show()
 		FlashcardType.BOTH: sitelenlatincard.show()
 
-func set_display_type(t: FlashcardType):
-	type = t
+func set_word(w: String): word = w
