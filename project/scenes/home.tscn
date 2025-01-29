@@ -57,5 +57,14 @@ theme_override_fonts/font = ExtResource("1_ap4p4")
 theme_override_font_sizes/font_size = 39
 text = "tawa"
 
+[node name="LessonSelect" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "-Select Lesson-"
+item_count = 2
+popup/item_0/text = "1"
+popup/item_1/text = "2"
+popup/item_1/id = 1
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/kama" to="." method="_on_kama_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/tawa" to="." method="_on_tawa_pressed"]
+[connection signal="pressed" from="VBoxContainer/LessonSelect" to="." method="_on_lesson_select_pressed"]
