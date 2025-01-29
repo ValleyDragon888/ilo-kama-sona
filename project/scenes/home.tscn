@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb740kth2dtbo"]
+[gd_scene load_steps=7 format=3 uid="uid://cb740kth2dtbo"]
 
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_ap4p4"]
 [ext_resource type="Script" path="res://scripts/home.gd" id="1_lisbi"]
@@ -11,6 +11,10 @@ font_size = 56
 [sub_resource type="LabelSettings" id="LabelSettings_o6t6h"]
 font = ExtResource("2_erd00")
 font_size = 44
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hbsr"]
+font = ExtResource("1_ap4p4")
+font_size = 22
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_lisbi")
@@ -60,11 +64,86 @@ text = "tawa"
 [node name="LessonSelect" type="MenuButton" parent="VBoxContainer"]
 layout_mode = 2
 text = "-Select Lesson-"
+flat = false
 item_count = 2
 popup/item_0/text = "1"
 popup/item_1/text = "2"
 popup/item_1/id = 1
 
+[node name="MenuMarker" type="Label" parent="VBoxContainer/LessonSelect"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ni"
+label_settings = SubResource("LabelSettings_8hbsr")
+
+[node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.130005
+grow_horizontal = 2
+grow_vertical = 2
+text = "ni"
+label_settings = SubResource("LabelSettings_8hbsr")
+horizontal_alignment = 2
+
+[node name="LessonType" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+text = "Learn All"
+flat = false
+switch_on_hover = true
+item_count = 3
+popup/item_0/text = "Learn All"
+popup/item_1/text = "Learn only Meanings"
+popup/item_1/id = 1
+popup/item_2/text = "Learn only Sitelen Pona"
+popup/item_2/id = 2
+
+[node name="MenuMarker" type="Label" parent="VBoxContainer/LessonType"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ni"
+label_settings = SubResource("LabelSettings_8hbsr")
+
+[node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonType"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.130005
+grow_horizontal = 2
+grow_vertical = 2
+text = "ni"
+label_settings = SubResource("LabelSettings_8hbsr")
+horizontal_alignment = 2
+
+[node name="StartLesson" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Start Lesson"
+
+[node name="litlearrow" type="Label" parent="VBoxContainer/StartLesson"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.130005
+grow_horizontal = 2
+grow_vertical = 2
+text = "e"
+label_settings = SubResource("LabelSettings_8hbsr")
+horizontal_alignment = 2
+
+[node name="littlearrow2" type="Label" parent="VBoxContainer/StartLesson"]
+offset_right = 22.0
+offset_bottom = 31.0
+text = "e"
+label_settings = SubResource("LabelSettings_8hbsr")
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/kama" to="." method="_on_kama_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/tawa" to="." method="_on_tawa_pressed"]
-[connection signal="pressed" from="VBoxContainer/LessonSelect" to="." method="_on_lesson_select_pressed"]

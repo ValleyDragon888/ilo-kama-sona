@@ -5,6 +5,7 @@ var selected = 0
 @onready var lessons = preload("res://assets/flashcards.json")
 var current_lessons
 var lesson_selected = -1
+var lesson_type = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 func update_course_showing():
+	lesson_selected = -1
+	$VBoxContainer/LessonSelect.text = "-Select Lesson-"
 	$VBoxContainer/HBoxContainer/CourseIndicator.text = courses[selected]
 	if courses[selected] == "pu":
 		$VBoxContainer/HBoxContainer/CourseIndicator.add_theme_font_override("font", load("res://assets/fonts/nasin-nanpa-4.0.1.otf"))
@@ -28,6 +31,7 @@ func update_course_showing():
 		$VBoxContainer/LessonSelect.get_popup().add_item(current_lessons.keys()[i], i)
 	
 	$VBoxContainer/LessonSelect.get_popup().id_pressed.connect(_on_new_lesson_selected)
+	$VBoxContainer/LessonType.get_popup().id_pressed.connect(_on_new_lesson_type_selected)
 	
 
 func _on_kama_pressed() -> void:
@@ -40,10 +44,16 @@ func _on_tawa_pressed() -> void:
 	if selected >= len(courses): selected = 0
 	update_course_showing()
 
-func _on_lesson_select_pressed() -> void:
-	pass
-
 func _on_new_lesson_selected(id: int):
 	print(id)
 	lesson_selected = id
 	$VBoxContainer/LessonSelect.text = current_lessons.keys()[id]
+
+func _on_new_lesson_type_selected(id: int):
+	lesson_type = id
+	var t = ""
+	match id:
+		0: t = "Learn All"
+		1: t = "Learn only Meanings"
+		2: t = "Learn only Sitelen Pona"
+	$VBoxContainer/LessonType.text = t
