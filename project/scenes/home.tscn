@@ -22,27 +22,13 @@ anchor_bottom = 1.0
 
 [node name="toki pona top bar" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="toki" type="Label" parent="VBoxContainer/toki pona top bar"]
 layout_mode = 2
-text = "toki"
+text = "toki,jankamasona!"
 label_settings = SubResource("LabelSettings_8unsf")
 horizontal_alignment = 1
-
-[node name="jan" type="Label" parent="VBoxContainer/toki pona top bar"]
-layout_mode = 2
-text = "jan"
-label_settings = SubResource("LabelSettings_8unsf")
-
-[node name="kama" type="Label" parent="VBoxContainer/toki pona top bar"]
-layout_mode = 2
-text = "kama"
-label_settings = SubResource("LabelSettings_8unsf")
-
-[node name="sona" type="Label" parent="VBoxContainer/toki pona top bar"]
-layout_mode = 2
-text = "sona!"
-label_settings = SubResource("LabelSettings_8unsf")
 
 [node name="Hello, Learner" type="Label" parent="VBoxContainer"]
 layout_mode = 2
