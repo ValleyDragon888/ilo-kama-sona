@@ -14,18 +14,24 @@ font_size = 44
 
 [sub_resource type="LabelSettings" id="LabelSettings_8hbsr"]
 font = ExtResource("1_ap4p4")
-font_size = 22
+font_size = 56
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_lisbi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_direction = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="toki pona top bar" type="HBoxContainer" parent="VBoxContainer"]
+[node name="toki pona top bar" type="VBoxContainer" parent="VBoxContainer"]
+clip_contents = true
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.02
 alignment = 1
 
 [node name="toki" type="Label" parent="VBoxContainer/toki pona top bar"]
@@ -34,7 +40,7 @@ text = "toki,jankamasona!"
 label_settings = SubResource("LabelSettings_8unsf")
 horizontal_alignment = 1
 
-[node name="Hello, Learner" type="Label" parent="VBoxContainer"]
+[node name="Hello, Learner" type="Label" parent="VBoxContainer/toki pona top bar"]
 layout_mode = 2
 text = "Hello, Learner!"
 label_settings = SubResource("LabelSettings_o6t6h")
@@ -42,9 +48,13 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.36
 
 [node name="kama" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
 theme_override_fonts/font = ExtResource("1_ap4p4")
 theme_override_font_sizes/font_size = 39
 text = "kama"
@@ -57,12 +67,18 @@ text = "course selectred"
 
 [node name="tawa" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
 theme_override_fonts/font = ExtResource("1_ap4p4")
 theme_override_font_sizes/font_size = 39
 text = "tawa"
 
 [node name="LessonSelect" type="MenuButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.5
+theme_override_font_sizes/font_size = 17
+toggle_mode = false
 text = "-Select Lesson-"
 flat = false
 item_count = 2
@@ -71,26 +87,37 @@ popup/item_1/text = "2"
 popup/item_1/id = 1
 
 [node name="MenuMarker" type="Label" parent="VBoxContainer/LessonSelect"]
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.207
+anchor_bottom = 1.0
+offset_right = 0.109997
+theme_override_font_sizes/font_size = 15
 text = "ni"
 label_settings = SubResource("LabelSettings_8hbsr")
+vertical_alignment = 1
 
 [node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonSelect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.919
+anchor_left = 0.793
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.130005
+offset_left = -0.110016
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 15
 text = "ni"
 label_settings = SubResource("LabelSettings_8hbsr")
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="LessonType" type="MenuButton" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.5
+theme_override_font_sizes/font_size = 17
+toggle_mode = false
 text = "Learn All"
 flat = false
 switch_on_hover = true
@@ -102,48 +129,63 @@ popup/item_2/text = "Learn only Sitelen Pona"
 popup/item_2/id = 2
 
 [node name="MenuMarker" type="Label" parent="VBoxContainer/LessonType"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.207
+anchor_bottom = 1.0
+offset_right = 0.109997
+theme_override_font_sizes/font_size = 15
 text = "ni"
 label_settings = SubResource("LabelSettings_8hbsr")
+vertical_alignment = 1
 
 [node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonType"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.919
+anchor_left = 0.793
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.130005
+offset_left = -0.110016
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 15
 text = "ni"
 label_settings = SubResource("LabelSettings_8hbsr")
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="StartLesson" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-toggle_mode = true
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.5
+theme_override_font_sizes/font_size = 17
 text = "Start Lesson"
 
 [node name="litlearrow" type="Label" parent="VBoxContainer/StartLesson"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.919
+anchor_left = 0.793
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.130005
+offset_left = -0.110016
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 15
 text = "e"
 label_settings = SubResource("LabelSettings_8hbsr")
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="littlearrow2" type="Label" parent="VBoxContainer/StartLesson"]
-offset_right = 22.0
-offset_bottom = 31.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.207
+anchor_bottom = 1.0
+offset_right = 0.109997
+theme_override_font_sizes/font_size = 15
 text = "e"
 label_settings = SubResource("LabelSettings_8hbsr")
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/kama" to="." method="_on_kama_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/tawa" to="." method="_on_tawa_pressed"]
