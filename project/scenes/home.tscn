@@ -191,6 +191,7 @@ text = "e"
 label_settings = SubResource("LabelSettings_8hbsr")
 vertical_alignment = 1
 
+[connection signal="close" from="Flashcards" to="." method="_on_flashcards_close"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/kama" to="." method="_on_kama_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/tawa" to="." method="_on_tawa_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartLesson" to="." method="_on_start_lesson_pressed"]

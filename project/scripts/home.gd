@@ -67,3 +67,9 @@ func _on_start_lesson_pressed() -> void:
 		$VBoxContainer.hide()
 		
 		$Flashcards.words = current_lessons[current_lessons.keys()[lesson_selected]]
+		$Flashcards.prepare_for_new_words()
+
+
+func _on_flashcards_close() -> void:
+	$Flashcards.hide_flashcards()
+	$VBoxContainer.show()

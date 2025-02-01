@@ -7,6 +7,8 @@ enum FlashcardType { LATIN, SITELEN, BOTH }
 var weights = PackedFloat32Array([])
 var rng = RandomNumberGenerator.new()
 
+signal close
+
 func _ready() -> void:
 	prepare_for_new_words()
 
@@ -50,3 +52,7 @@ func _on_ike_pressed() -> void:
 func _on_pona_pressed() -> void:
 	tweak_weights(true)
 	next()
+
+
+func _on_close_pressed() -> void:
+	close.emit()

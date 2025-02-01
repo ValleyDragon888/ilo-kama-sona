@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7molslfff2wm"]
+[gd_scene load_steps=14 format=3 uid="uid://b7molslfff2wm"]
 
 [ext_resource type="FontFile" uid="uid://bwa8te7bl27gf" path="res://assets/fonts/nasin-nanpa-4.0.1.otf" id="1_2lsmm"]
 [ext_resource type="Script" path="res://scripts/flashcards.gd" id="1_8mngu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdfsge52fwu1f" path="res://scenes/card.tscn" id="2_skevj"]
 [ext_resource type="StyleBox" uid="uid://clk4ah5g37f4h" path="res://scenes/flip.tres" id="3_6ftae"]
 [ext_resource type="StyleBox" uid="uid://6m8p0vuacjdo" path="res://scenes/pona.tres" id="3_u7gry"]
+[ext_resource type="StyleBox" uid="uid://c2ax7b4rgr7sv" path="res://assets/close_button.tres" id="7_nvoyk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eott1"]
 bg_color = Color(0.601507, 0.406625, 0.0545112, 1)
@@ -15,6 +16,34 @@ bg_color = Color(0.600231, 0.180177, 0.150072, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnhn4"]
 bg_color = Color(0.221462, 0.351019, 0.0710477, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paygo"]
+bg_color = Color(0.768899, 0.152366, 0.17674, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_color = Color(0.768627, 0.152941, 0.176471, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et7me"]
+bg_color = Color(0.596078, 0.0980392, 0.12549, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_color = Color(0.596078, 0.101961, 0.12549, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="Theme" id="Theme_b6w12"]
+Button/fonts/font = ExtResource("1_2lsmm")
+Button/styles/hover = SubResource("StyleBoxFlat_paygo")
+Button/styles/normal = ExtResource("7_nvoyk")
+Button/styles/pressed = SubResource("StyleBoxFlat_et7me")
 
 [node name="Flashcards" type="Node2D"]
 script = ExtResource("1_8mngu")
@@ -74,5 +103,19 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pnhn4")
 theme_override_styles/normal = ExtResource("3_u7gry")
 text = "pona"
 
+[node name="close" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.733
+anchor_right = 0.999
+anchor_bottom = 0.093
+offset_left = 0.0899963
+offset_right = 0.269989
+offset_bottom = 0.199997
+theme = SubResource("Theme_b6w12")
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "ala"
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/ike" to="." method="_on_ike_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/pona" to="." method="_on_pona_pressed"]
+[connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]
