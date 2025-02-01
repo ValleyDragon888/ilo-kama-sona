@@ -39,6 +39,10 @@ func tweak_weights(pona: bool):
 		if weights[word_idx] > 3.0: weights[word_idx] = 3.0
 	print(weights)
 
+func hide_flashcards(): $CanvasLayer.hide(); $CanvasLayer/Card.hide()
+func show_flashcards(): $CanvasLayer.show(); $CanvasLayer/Card.show()
+
+
 func _on_ike_pressed() -> void:
 	tweak_weights(false)
 	next()

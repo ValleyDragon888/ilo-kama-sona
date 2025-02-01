@@ -9,6 +9,8 @@ var lesson_type = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Flashcards.hide_flashcards()
+	
 	lessons = lessons.get_data()
 	current_lessons = lessons["pu"]
 	update_course_showing()
@@ -57,3 +59,11 @@ func _on_new_lesson_type_selected(id: int):
 		1: t = "Learn only Meanings"
 		2: t = "Learn only Sitelen Pona"
 	$VBoxContainer/LessonType.text = t
+
+
+func _on_start_lesson_pressed() -> void:
+	if lesson_selected != -1:
+		$Flashcards.show_flashcards()
+		$VBoxContainer.hide()
+		
+		$Flashcards.words = current_lessons[current_lessons.keys()[lesson_selected]]
