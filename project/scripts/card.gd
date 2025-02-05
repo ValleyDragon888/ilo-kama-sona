@@ -7,6 +7,7 @@ enum FlashcardType { LATIN, SITELEN, BOTH }
 
 @export var word = "toki"
 @export var type: FlashcardType = FlashcardType.BOTH
+@export var front = true
 
 func _ready() -> void:
 	refresh_display()
@@ -16,21 +17,26 @@ func _process(delta: float) -> void:
 
 func refresh_display():
 	set_flashcard_type(type)
-	match type:
-		FlashcardType.LATIN:
-			$VBoxContainer/LatinCard/Text.text = word
-		FlashcardType.SITELEN:
-			$VBoxContainer/SitelenPonaCard/SitelenPona.text = word
-		FlashcardType.BOTH:
-			$VBoxContainer/SitelenLatinCard/Text.text = word
-			$VBoxContainer/SitelenLatinCard/SitelenPona.text = word
+	$VBoxContainer/LatinCard/Text.text = word
+	$VBoxContainer/SitelenLatinCard/Text.text = word
+	$VBoxContainer/SitelenLatinCard/SitelenPona.text = word
+	$VBoxContainer/SitelenPonaCard/SitelenPona.text = word
+	#match type:
+		#FlashcardType.LATIN:
+			#$VBoxContainer/LatinCard/Text.text = word
+		#FlashcardType.SITELEN:
+			#$VBoxContainer/SitelenPonaCard/SitelenPona.text = word
+		#FlashcardType.BOTH:
+			#$VBoxContainer/SitelenLatinCard/Text.text = word
+			#$VBoxContainer/SitelenLatinCard/SitelenPona.text = word
 
 func set_flashcard_type(t: FlashcardType):
 	type = t
 	latincard.hide(); sitelenponacard.hide(); sitelenlatincard.hide()
-	match t:
-		FlashcardType.LATIN: latincard.show()
-		FlashcardType.SITELEN: sitelenponacard.show()
-		FlashcardType.BOTH: sitelenlatincard.show()
+	if front:
+		match t:
+			FlashcardType.LATIN: latincard.show()
+			FlashcardType.SITELEN: sitelenponacard.show()
+			FlashcardType.BOTH: sitelenlatincard.show()
 
 func set_word(w: String): word = w

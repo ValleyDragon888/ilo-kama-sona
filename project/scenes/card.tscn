@@ -68,3 +68,25 @@ layout_mode = 2
 text = "akesi"
 label_settings = SubResource("LabelSettings_mwkbb")
 horizontal_alignment = 1
+
+[node name="AnswerCard" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SitelenPona" type="Label" parent="VBoxContainer/AnswerCard"]
+layout_mode = 2
+text = "akesi"
+label_settings = SubResource("LabelSettings_n3n70")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="VBoxContainer/AnswerCard"]
+layout_mode = 2
+text = "akesi"
+label_settings = SubResource("LabelSettings_mwkbb")
+horizontal_alignment = 1
+
+[node name="Meaning" type="Label" parent="VBoxContainer/AnswerCard"]
+layout_mode = 2
+text = "akesi"
+label_settings = SubResource("LabelSettings_mwkbb")
+horizontal_alignment = 1
