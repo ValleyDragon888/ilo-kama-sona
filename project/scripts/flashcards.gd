@@ -60,3 +60,8 @@ func _on_pona_pressed() -> void:
 
 func _on_close_pressed() -> void:
 	close.emit()
+
+
+func _on_flip_card_pressed() -> void:
+	card.front = !card.front
+	card.refresh_display()

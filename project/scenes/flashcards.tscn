@@ -67,7 +67,7 @@ size_flags_vertical = 0
 layout_mode = 2
 alignment = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/FlipCard"]
+[node name="FlipCard" type="Button" parent="CanvasLayer/VBoxContainer/FlipCard"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.72
@@ -116,6 +116,7 @@ theme_override_font_sizes/font_size = 36
 action_mode = 0
 text = "ala"
 
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/FlipCard/FlipCard" to="." method="_on_flip_card_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/ike" to="." method="_on_ike_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomBarButtons/pona" to="." method="_on_pona_pressed"]
 [connection signal="pressed" from="CanvasLayer/close" to="." method="_on_close_pressed"]

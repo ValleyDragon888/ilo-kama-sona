@@ -29,7 +29,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SideIndicator" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Front"
+text = "Question:"
 label_settings = SubResource("LabelSettings_psb0o")
 horizontal_alignment = 1
 
@@ -90,3 +90,4 @@ layout_mode = 2
 text = "akesi"
 label_settings = SubResource("LabelSettings_mwkbb")
 horizontal_alignment = 1
+autowrap_mode = 3
