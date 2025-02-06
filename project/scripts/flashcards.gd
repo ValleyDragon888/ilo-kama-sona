@@ -10,7 +10,7 @@ var rng = RandomNumberGenerator.new()
 signal close
 
 func _ready() -> void:
-	print("2")
+	print("3")
 	prepare_for_new_words()
 
 func _process(delta: float) -> void:
@@ -27,6 +27,10 @@ func generate_weights():
 func next():
 	# there is a rand_weighted() function
 	#var new_word = words[rng.rand_weighted(weights)]
+	var result = ["string one", "string two", "whatever"][rng.rand_weighted([0.5, 1, 1])]
+
+	print(result)
+	
 	var new_word = words.pick_random()
 	print(new_word)
 	var type = [FlashcardType.LATIN, FlashcardType.SITELEN, FlashcardType.BOTH].pick_random()
