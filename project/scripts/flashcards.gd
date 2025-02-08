@@ -26,12 +26,8 @@ func generate_weights():
 
 func next():
 	# there is a rand_weighted() function
-	#var new_word = words[rng.rand_weighted(weights)]
-	var result = ["string one", "string two", "whatever"][rng.rand_weighted([0.5, 1, 1])]
+	var new_word = words[rng.rand_weighted(weights)]
 
-	print(result)
-	
-	var new_word = words.pick_random()
 	print(new_word)
 	var type = [FlashcardType.LATIN, FlashcardType.SITELEN, FlashcardType.BOTH].pick_random()
 	card.set_flashcard_type(type)
