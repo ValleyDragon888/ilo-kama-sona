@@ -4,6 +4,7 @@ enum FlashcardType { LATIN, SITELEN, BOTH }
 
 @onready var card = $CanvasLayer/Card
 @export var words = ["wile", "pona", "jaki", "akesi", "mi", "sina"]
+@export var lesson_type = "Learn All"
 var weights = PackedFloat32Array([])
 var rng = RandomNumberGenerator.new()
 
@@ -27,9 +28,15 @@ func generate_weights():
 func next():
 	# there is a rand_weighted() function
 	var new_word = words[rng.rand_weighted(weights)]
-
+	
+	var type = -1
 	print(new_word)
-	var type = [FlashcardType.LATIN, FlashcardType.SITELEN, FlashcardType.BOTH].pick_random()
+	if lesson_type == 0:
+		type = [FlashcardType.LATIN, FlashcardType.SITELEN, FlashcardType.BOTH].pick_random()
+	elif lesson_type == 1:
+		type = [FlashcardType.SITELEN, FlashcardType.BOTH].pick_random()
+	elif lesson_type == 2:
+		type = FlashcardType.LATIN
 	card.set_flashcard_type(type)
 	card.set_word(new_word)
 	card.refresh_display()

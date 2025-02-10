@@ -32,9 +32,9 @@ func update_course_showing():
 	for i in range(len(current_lessons)):
 		$VBoxContainer/LessonSelect.get_popup().add_item(current_lessons.keys()[i], i)
 	
-	$VBoxContainer/LessonSelect.get_popup().id_pressed.connect(_on_new_lesson_selected)
-	$VBoxContainer/LessonType.get_popup().id_pressed.connect(_on_new_lesson_type_selected)
-	
+	#$VBoxContainer/LessonSelect.get_popup().id_pressed.connect(_on_new_lesson_selected)
+	#$VBoxContainer/LessonType.get_popup().id_pressed.connect(_on_new_lesson_type_selected)
+	#
 
 func _on_kama_pressed() -> void:
 	selected -= 1
@@ -51,17 +51,18 @@ func _on_new_lesson_selected(id: int):
 	lesson_selected = id
 	$VBoxContainer/LessonSelect.text = current_lessons.keys()[id]
 
-func _on_new_lesson_type_selected(id: int):
-	lesson_type = id
-	var t = ""
-	match id:
-		0: t = "Learn All"
-		1: t = "Learn only Meanings"
-		2: t = "Learn only Sitelen Pona"
-	$VBoxContainer/LessonType.text = t
+#func _on_new_lesson_type_selected(id: int):
+	#lesson_type = id
+	#var t = ""
+	#match id:
+		#0: t = "Learn All"
+		#1: t = "Learn only Meanings"
+		#2: t = "Learn only Sitelen Pona"
+	#$VBoxContainer/LessonType.text = t
 
 
 func _on_start_lesson_pressed() -> void:
+	$Flashcards.lesson_type = $VBoxContainer/LessonType.selected
 	if lesson_selected != -1:
 		$Flashcards.show_flashcards()
 		$VBoxContainer.hide()

@@ -7,7 +7,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_8unsf"]
 font = ExtResource("1_ap4p4")
-font_size = 56
+font_size = 52
 
 [sub_resource type="LabelSettings" id="LabelSettings_o6t6h"]
 font = ExtResource("2_erd00")
@@ -40,7 +40,7 @@ alignment = 1
 
 [node name="toki" type="Label" parent="VBoxContainer/toki pona top bar"]
 layout_mode = 2
-text = "toki,jankamasona!"
+text = "tokijanpi(kamasona"
 label_settings = SubResource("LabelSettings_8unsf")
 horizontal_alignment = 1
 
@@ -77,86 +77,30 @@ theme_override_fonts/font = ExtResource("1_ap4p4")
 theme_override_font_sizes/font_size = 39
 text = "tawa"
 
-[node name="LessonSelect" type="MenuButton" parent="VBoxContainer"]
+[node name="LessonSelect" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 5.5
-theme_override_font_sizes/font_size = 17
-toggle_mode = false
-text = "-Select Lesson-"
-flat = false
+size_flags_stretch_ratio = 4.92
+alignment = 1
+autowrap_mode = 3
 item_count = 2
-popup/item_0/text = "1"
-popup/item_1/text = "2"
+popup/item_0/text = "hihi"
+popup/item_1/text = "hoho"
 popup/item_1/id = 1
 
-[node name="MenuMarker" type="Label" parent="VBoxContainer/LessonSelect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.207
-anchor_bottom = 1.0
-offset_right = 0.109997
-theme_override_font_sizes/font_size = 15
-text = "ni"
-label_settings = SubResource("LabelSettings_8hbsr")
-vertical_alignment = 1
-
-[node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonSelect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.793
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.110016
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 15
-text = "ni"
-label_settings = SubResource("LabelSettings_8hbsr")
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="LessonType" type="MenuButton" parent="VBoxContainer"]
+[node name="LessonType" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 5.5
-theme_override_font_sizes/font_size = 17
-toggle_mode = false
-text = "Learn All"
-flat = false
-switch_on_hover = true
+size_flags_stretch_ratio = 4.92
+alignment = 1
+autowrap_mode = 3
+selected = 0
 item_count = 3
 popup/item_0/text = "Learn All"
-popup/item_1/text = "Learn only Meanings"
+popup/item_1/text = "Learn only Sitelen Pona"
 popup/item_1/id = 1
-popup/item_2/text = "Learn only Sitelen Pona"
+popup/item_2/text = "Learn only Meanings"
 popup/item_2/id = 2
-
-[node name="MenuMarker" type="Label" parent="VBoxContainer/LessonType"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.207
-anchor_bottom = 1.0
-offset_right = 0.109997
-theme_override_font_sizes/font_size = 15
-text = "ni"
-label_settings = SubResource("LabelSettings_8hbsr")
-vertical_alignment = 1
-
-[node name="MenuMarker2" type="Label" parent="VBoxContainer/LessonType"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.793
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.110016
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 15
-text = "ni"
-label_settings = SubResource("LabelSettings_8hbsr")
-horizontal_alignment = 2
-vertical_alignment = 1
 
 [node name="StartLesson" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -194,4 +138,5 @@ vertical_alignment = 1
 [connection signal="close" from="Flashcards" to="." method="_on_flashcards_close"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/kama" to="." method="_on_kama_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/tawa" to="." method="_on_tawa_pressed"]
+[connection signal="item_selected" from="VBoxContainer/LessonSelect" to="." method="_on_new_lesson_selected"]
 [connection signal="pressed" from="VBoxContainer/StartLesson" to="." method="_on_start_lesson_pressed"]
