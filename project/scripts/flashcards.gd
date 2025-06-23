@@ -39,6 +39,7 @@ func next():
 		type = FlashcardType.LATIN
 	card.set_flashcard_type(type)
 	card.set_word(new_word)
+	card.front = true
 	card.refresh_display()
 
 func tweak_weights(pona: bool):
